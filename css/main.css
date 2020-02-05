@@ -52,3 +52,7 @@ body { width: 100%; height: 100%; }
 }
 
 #mapWrapper { height: 180px; }
+
+.form-group{
+  padding-left: 1em;
+}

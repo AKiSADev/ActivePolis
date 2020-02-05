@@ -208,17 +208,41 @@
 
   <!--DIV DI "TUTTE LE SEGNALAZIONI" -->
   <div id="allSeg" style="display: block;">
-
     <div class="row justify-content-md-center">
-      <div class="justify-content-md-center">
-        
+      <div class="col-md-auto padding-adder">
+        <form class="form-inline">
+
+          <div class="form-group">
+            <input type="email" class="form-control" id="emailReg" required>
+            <label for="emailReg">Email</label>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="passReg" required>
+            <label for="passReg">Password</label>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="passRegConf" required>
+            <label for="passRegConf">Conferma password</label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="codFisc" required>
+            <label for="codFisc">Codice fiscale</label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="nome" required>
+            <label for="nome">Nome</label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="cognome" required>
+            <label for="cognome">Cognome</label>
+          </div>
+          <button class="btn btn-primary" type="submit">Registrati</button>
 
 
+
+        </form>
       </div>
-
     </div>
-
-
 
   </div>
 
@@ -301,9 +325,9 @@
                   <input type="password" class="form-control" id="passReg" required>
                   <label for="passReg">Password</label>
                 </div>
-                <div class="form-group">closeLateralMenu();
+                <div class="form-group">
                   <input type="password" class="form-control" id="passRegConf" required>
-                  <label for="passReg">Conferma password</label>
+                  <label for="passRegConf">Conferma password</label>
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" id="codFisc" required>
