@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Active Polis</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <link rel='stylesheet' type='text/css' media='screen' href='/css/main.css'>
+  <link rel="stylesheet" href="/bootstrap-italia/css/bootstrap-italia.min.css">
+
+</head>
+
+<body>
+
+  <div class="it-header-wrapper">
+    <div class="it-header-slim-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-slim-wrapper-content">
+              <a class="d-none d-lg-block navbar-brand" href="#">Comune di Bari</a>
+              <div class="nav-mobile">
+                <nav>
+                  <a class="it-opener d-lg-none" data-toggle="collapse" href="#menu4" role="button"
+                    aria-expanded="false" aria-controls="menu4">
+                    <span>Comune di Bari</span>
+                    <svg class="icon">
+                      <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-expand"></use>
+                    </svg>
+                  </a>
+                  <div class="link-list-wrapper collapse" id="menu4">
+                    <ul class="link-list">
+                      <li><a class="list-item" href="https://www.comune.bari.it/">Sito del Comune di Bari</a></li>
+                      <li><a class="list-item" href="http://www.regione.puglia.it/">Sito della Regione Puglia</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+              <div class="it-header-slim-right-zone">
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                    <span>ITA</span>
+                    <svg class="icon d-none d-lg-block">
+                      <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-expand"></use>
+                    </svg>
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="link-list-wrapper">
+                          <ul class="link-list">
+                            <li><a class="list-item" href="#"><span>ITA</span></a></li>
+                            <li><a class="list-item" href="#"><span>ENG</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="entra" class="it-access-top-wrapper">
+                  <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#accediRegistrati">Accedi o
+                    Registrati</a>
+                </div>
+                <div id="esci" class="it-access-top-wrapper" style="display:none;">
+                  <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#logout-modal">Log out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="it-nav-wrapper">
+      <div class="it-header-center-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="it-header-center-content-wrapper">
+                <div class="it-brand-wrapper">
+                  <a href="#">
+                    <img src="https://img.icons8.com/plasticine/100/000000/light-on.png">
+                    <div class="it-brand-text">
+                      <h2 class="no_toc">ActivePolis</h2>
+                      <h3 class="no_toc d-none d-md-block">I cittadini in gioco</h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="it-right-zone">
+                  <div class="it-socials d-none d-md-flex">
+                    <span>Seguici su</span>
+                    <ul>
+                      <li>
+                        <a href="#" aria-label="Facebook" target="_blank">
+                          <svg class="icon">
+                            <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-facebook"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" aria-label="Github" target="_blank">
+                          <svg class="icon">
+                            <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-instagram"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" aria-label="Twitter" target="_blank">
+                          <svg class="icon">
+                            <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-twitter"></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="it-header-navbar-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!--start nav-->
+              <nav class="navbar navbar-expand-lg has-megamenu">
+                <button class="custom-navbar-toggler" type="button" aria-controls="nav02" aria-expanded="false"
+                  aria-label="Toggle navigation" data-target="#nav02">
+                  <svg class="icon">
+                    <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-burger"></use>
+                  </svg>
+                </button>
+                <div class="navbar-collapsable" id="nav02" style="display: none;">
+                  <div class="overlay" style="display: none;"></div>
+                  <div class="close-div sr-only">
+                    <button class="btn close-menu" type="button"><span class="it-close"></span>close</button>
+                  </div>
+                  <div class="menu-wrapper">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active"><a class="nav-link active" href="#" onclick="gotoAllSeg()"><span>Tutte
+                            le
+                            segnalazioni</span><span class="sr-only">current</span></a></li>
+                      <li class="nav-item"><a id="gotoprofilo" class="nav-link disabled" href="#"
+                          onclick="gotoProfilo()"><span>Il tuo profilo</span></a></li>
+                      <li class="nav-item"><a class="nav-link" href="#" onclick="gotoMySeg()"><span>Le tue
+                            segnalazioni</span></a></li>
+                      <li class="nav-item" id="gestisci" hidden=true><a class="nav-link" href="#"
+                          onclick="gotoGestSeg()"><span>Gestisci le
+                            segnalazioni</span></a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                          <span>Link utili</span>
+                          <svg class="icon icon-xs">
+                            <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-expand"></use>
+                          </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                          <div class="link-list-wrapper">
+                            <ul class="link-list">
+                              <li><a class="list-item" href="#"><span>Polizia di Stato</span></a></li>
+                              <li><a class="list-item" href="#"><span>Arma dei Carabinieri</span></a></li><!-- Modal -->
+                              <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                  <!-- Modal content-->
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Modal Header</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Some text in the modal.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <li><a class="list-item" href="#"><span>Vigili del fuoco</span></a></li>
+                              <li><span class="divider"></span></li>
+                              <li><a class="list-item" href="#"><span>Guardia di finanza</span></a></li>
+                              <li><a class="list-item" href="#"><span>ANAS</span></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--DIV DI "TUTTE LE SEGNALAZIONI" -->
+  <div id="allSeg" style="display: block;">
+    <div class="row padding-adder w-100 h-100">
+
+      <!-- DIV MESSAGGI -->
+      <div class="col-md-6 w-100" id="messageWrapper">
+        <div id="1" class="card-wrapper card-space">
+          <div class="card card-bg">
+            <div class="card-body">
+              <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…
+              </h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+              <a class="read-more" href="#">
+                <span class="text">Leggi di più</span>
+                <svg class="icon">
+                  <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DIV MAPPA -->
+      <div class="col-md-6" id="mapWrapper">
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div id="tabProfilo" style="display: none;">
+    2
+  </div>
+  <div id="mySeg" style="display: none;">
+    3
+  </div>
+  <div id="gestSeg" style="display: none;">
+    4
+  </div>
+
+
+
+  <!--COOKIE BAR-->
+  <div class="cookiebar">
+    <p>Questo sito utilizza cookie tecnici, analytics e di terze parti. <br>Proseguendo nella navigazione accetti
+      l’utilizzo dei cookie.</p>
+    <div class="cookiebar-buttons">
+      <a href="#" class="cookiebar-btn">Preferenze<span class="sr-only">cookies</span></a>
+      <button data-accept="cookiebar" class="cookiebar-btn cookiebar-confirm">Accetto<span class="sr-only"> i
+          cookies</span></button>
+    </div>
+  </div>
+
+
+  <!-- AGGIUNGERE A FOOTER-->
+  <a href="https://icons8.com/icon/JxfSSXMKDsfd/luce-accesa" hidden=true>Luce accesa icon by Icons8</a>
+
+
+
+
+  <!-- MODAL ACCEDI/REGISTRATI-->
+  <!-- Modal -->
+  <div id="accediRegistrati" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Accedi o Registrati</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item"><a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#accedi" role="tab"
+                aria-controls="tab1" aria-selected="true">Accedi</a></li>
+            <li class="nav-item"><a class="nav-link" id="tab2-tab" data-toggle="tab" href="#registrati" role="tab"
+                aria-controls="tab2" aria-selected="false">Registrati</a></li>
+          </ul>
+          <div class="tab-content" id="TabContentAccesso">
+            <div class="tab-pane fade tab-accesso show active" id="accedi" role="tabpanel">
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="emailLogIn" required>
+                  <label for="emailLogIn">Email</label>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="passLogIn" required>
+                  <label for="passLogIn">Password</label>
+                </div>
+                <button class="btn btn-primary" type="button" id="logmein" onclick="validaLoginMock()">Accedi</button>
+              </form>
+              <div class="alert alert-danger warning-accesso" id="wrongCred" role="alert" style="display:none">
+                Hai inserito <strong> mail </strong> o <strong> password </strong> errate!
+              </div>
+            </div>
+            <div class="tab-pane tab-accesso fade" id="registrati" role="tabpanel">
+              <form action="">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="emailReg" required>
+                  <label for="emailReg">Email</label>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="passReg" required>
+                  <label for="passReg">Password</label>
+                </div>
+                <div class="form-group">closeLateralMenu();
+                  <input type="password" class="form-control" id="passRegConf" required>
+                  <label for="passReg">Conferma password</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="codFisc" required>
+                  <label for="codFisc">Codice fiscale</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="nome" required>
+                  <label for="nome">Nome</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="cognome" required>
+                  <label for="cognome">Cognome</label>
+                </div>
+                <button class="btn btn-primary" type="submit">Registrati</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL LOGOUT -->
+  <div id="logout-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Sei sicuro di voler uscire dall'applicazione?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="logOut()" data-dismiss="modal">Esci</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Non uscire</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- FAB -->
+  <div class="btn-group-fab" role="group" aria-label="FAB Menu">
+    <div>
+      <button type="button" id="fab" class="btn btn-main btn-primary has-tooltip" data-placement="left"
+        title="Menu"><svg class="icon icon-white ">
+          <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-plus"></use>
+        </svg> </button>
+    </div>
+  </div>
+
+
+
+
+  <script>window.__PUBLIC_PATH__ = '/bootstrap-italia/fonts'</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    crossorigin="anonymous"></script>
+  <script src="/bootstrap-italia/js/bootstrap-italia.min.js"></script>
+  <script src='/js/main.js'></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
+</body>
+
+</html>
