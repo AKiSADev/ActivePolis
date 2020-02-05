@@ -8,13 +8,7 @@ var map;
 $(document).ready(function () {
     console.log("ready!");
 
-    var mymap = L.map('mapWrapper').setView([51.505, -0.09], 13);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        accessToken: 'your.mapbox.access.token'
-    }).addTo(mymap);
+
 });
 
 function validaLoginMock() {
@@ -56,6 +50,7 @@ function logOut() {
     isAdmin = false;
     isLogged = false;
     $('#gestisci').hide()
+    $('#gestisci').classList.remove("active");
     document.getElementById("gotoprofilo").classList.add("disabled");
     $('#esci').hide()
     $('#entra').show();
@@ -68,6 +63,7 @@ function gotoProfilo() {
     $("#tabProfilo").show();
     $("#mySeg").hide();
     $("#gestSeg").hide();
+
 }
 
 function gotoAllSeg() {
@@ -98,6 +94,16 @@ function closeLateralMenu() {
     $(".custom-navbar-toggler")[0].setAttribute("aria-expanded", "false");
     $(".navbar-collapsable")[0].classList.remove("expanded");
     $(".navbar-collapsable")[0].style.setProperty("display", "none")
+
+    //leva active
+    $('.nav-item.active')[0].lastChild.classList.remove("active");
+    $('.nav-item.active')[0].lastChild.lastChild.classList.remove("active");
+    $('.nav-item.active')[0].classList.remove("active");
+
+    $('a.nav-link.focus--mouse')[0].parentNode.classList.add("active");
+    $('a.nav-link.focus--mouse')[0].lastChild.classList.add("active");
+    $('a.nav-link.focus--mouse')[0].classList.add("active");
+
 }
 
 $(function () {
@@ -107,4 +113,6 @@ $(function () {
     });
 });
 
-
+$(document).click(function(event) {
+    console.log($(event.target));
+});
