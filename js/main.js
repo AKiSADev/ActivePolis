@@ -1,6 +1,6 @@
 // var gestisciSegnalazioni = false;
-var isAdmin = false;
-var isLogged = false;
+var isAdmin = true;
+var isLogged = true;
 var userMail;
 var userPass;
 var map;
@@ -10,6 +10,8 @@ var segnalazioni;
 $(document).ready(function() {
     console.log("ready!");
 
+    //da levare quando testi
+    validaLoginMock();
 
     initMap();
 
@@ -20,8 +22,9 @@ function validaLoginMock() {
     userPass = document.getElementById("passLogIn").value;
 
 
+
     //admin
-    if (userMail == "admin@admin.it" && userPass == "admin") {
+    if ((isAdmin && isLogged) || userMail == "admin@admin.it" && userPass == "admin") {
         isAdmin = true;
         isLogged = true;
         $('#accediRegistrati').modal('hide');
@@ -35,7 +38,7 @@ function validaLoginMock() {
         $('#esci').show()
     }
     //user
-    else if (userMail == "user@user.it" && userPass == "user") {
+    else if ((isLogged) || userMail == "user@user.it" && userPass == "user") {
         isAdmin = false;
         isLogged = true;
         $('#accediRegistrati').modal('hide');
@@ -101,12 +104,12 @@ function closeLateralMenu() {
     $(".navbar-collapsable")[0].style.setProperty("display", "none")
 
     //leva active
-    $('.nav-item.active')[0].lastChild.classList.remove("active");
-    $('.nav-item.active')[0].lastChild.lastChild.classList.remove("active");
+    $('.nav-item.active')[0].firstChild.classList.remove("active");
+    $('.nav-item.active')[0].firstChild.firstChild.classList.remove("active");
     $('.nav-item.active')[0].classList.remove("active");
 
     $('a.nav-link.focus--mouse')[0].parentNode.classList.add("active");
-    $('a.nav-link.focus--mouse')[0].lastChild.classList.add("active");
+    $('a.nav-link.focus--mouse')[0].firstChild.classList.add("active");
     $('a.nav-link.focus--mouse')[0].classList.add("active");
 
 }

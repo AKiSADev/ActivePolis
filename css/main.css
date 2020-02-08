@@ -67,6 +67,7 @@
 }
 
 body {
+    padding-top: 13rem;
     height: 100%;
     width: 100%;
 }
@@ -93,12 +94,8 @@ body {
     padding-left: 0em;
 }
 
-html {
-    overflow-y: scroll;
-}
 
 #seg {
-    overflow-y: scroll;
     max-height: 500em;
 }
 
@@ -111,6 +108,11 @@ html {
     color: white;
 }
 
+.stick-to-position{
+    position: fixed;
+    z-index: 2;
+}
+
 @media screen and (max-width: 600px) {
     .responsive-map {
         position: relative;
@@ -118,5 +120,11 @@ html {
         padding-top: 5em;
         height: 0;
         overflow: hidden;
+    }
+
+    body {
+        padding-top: 8rem;
+        height: 100%;
+        width: 100%;
     }
 }

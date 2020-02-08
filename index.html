@@ -19,7 +19,7 @@
 
 <body>
 
-    <div class="it-header-wrapper">
+    <div class="fixed-top it-header-wrapper">
         <div class="it-header-slim-wrapper">
             <div class="container">
                 <div class="row">
@@ -133,12 +133,12 @@
                     </div>
                 </div>
             </div>
-            <div class="it-header-navbar-wrapper">
+            <div class=" it-header-navbar-wrapper">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <!--start nav-->
-                            <nav class="navbar navbar-expand-lg has-megamenu">
+                            <nav class="navbar navbar-expand-lg">
                                 <button class="custom-navbar-toggler" type="button" aria-controls="nav02"
                                     aria-expanded="false" aria-label="Toggle navigation" data-target="#nav02">
                                     <svg class="icon">
@@ -158,7 +158,8 @@
                                                         le
                                                         segnalazioni</span><span class="sr-only">current</span></a></li>
                                             <li class="nav-item"><a id="gotoprofilo" class="nav-link" href="#"
-                                                    onclick="gotoProfilo()" hidden=true><span>Il tuo profilo</span></a></li>
+                                                    onclick="gotoProfilo()" hidden=true><span>Il tuo profilo</span></a>
+                                            </li>
                                             <li class="nav-item"><a class="nav-link" href="#"
                                                     onclick="gotoMySeg()"><span>Le tue
                                                         segnalazioni</span></a></li>
@@ -182,7 +183,13 @@
                                                             <li><a class="list-item" href="#"><span>Arma dei
                                                                         Carabinieri</span></a></li>
                                                             <!-- Modal -->
-                                                            <div id="myModal" class="modal fade" role="dialog">
+                                                            <div id="myModal" class="modal fade" role="dialog">oni
+                                                                current
+                                                                Il tuo profilo
+                                                                Le tue segnalazioni
+                                                                Gestisci le segnalazioni
+                                                                Link utili
+                                                                4
                                                                 <div class="modal-dialog">
 
                                                                     <!-- Modal content-->
@@ -251,22 +258,24 @@
                                 <div class="form-row">
 
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-11">
+                                <div class="form-group">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" id="inputAddress">
                                         <label for="inputAddress">Luogo</label>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <svg class="icon icon-sm icon-primary">
+                                                    <use
+                                                        xlink:href="/bootstrap-italia/svg/sprite.svg#it-map-marker-circle">
+                                                    </use>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-1">
-                                        <button class="btn btn-outline-primary btn-xs">
-                                            <svg class="bg-light icon icon-primary">
-                                                <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-map-marker-circle">
-                                                </use>
-                                            </svg>
-                                        </button>
-                                    </div>
+
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col">
+                                <div class="form-group">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" id="inputTitle">
                                         <label for="inputCity">Testo</label>
                                     </div>
@@ -277,7 +286,7 @@
                             <div class="form-row">
                                 <div class="form-group col text-center">
                                     <button type="submit" class="btn btn-outline-primary btn-xl">Filtra
-                                        <svg class="bg-light icon icon-primary icon-xs">
+                                        <svg class="bg-white icon icon-primary icon-xs">
                                             <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-funnel">
                                             </use>
                                         </svg>
@@ -341,15 +350,134 @@
 
     <div id="tabProfilo" style="display: none;">
 
-        <div class="row">
-            <div class="d-flex align-items-center justify-content-around flex-wrap flex-sm-nowrap">
+        <div class="row justify-content-md-right">
+            <div class="col-md-6 padding-adder">
+                <div class="d-flex align-items-center justify-content-around flex-wrap flex-sm-nowrap">
 
-                <div class="avatar size-xxl">
-                    <img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Giovanna Ferrero">
+                    <div class="avatar size-xxl">
+                        <img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Giovanna Ferrero">
+                    </div>
+                </div>
+                <div class="padding-adder" id="infoProfilo">
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
+                                placeholder="Lorem Ipsum">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <svg class="icon icon-sm icon-primary">
+                                        <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-pencil"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
+                                placeholder="Lorem Ipsum">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <svg class="icon icon-sm icon-primary">
+                                        <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-pencil"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
+                                placeholder="Lorem Ipsum">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <svg class="icon icon-sm icon-primary">
+                                        <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-pencil"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
+                                placeholder="Lorem Ipsum">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <svg class="icon icon-sm icon-primary">
+                                        <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-pencil"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
+                                placeholder="Lorem Ipsum">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <svg class="icon icon-sm icon-primary">
+                                        <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-pencil"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                        </div>
+                    </div>
+
+
                 </div>
 
             </div>
+            <div class="col-md-6 padding-adder">
+                <div>
+                    <ul id="seg">
+                        <li class="media">
+                            <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                                alt="testo alternativo">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </li>
+                        <div class="divider"></div>
+                        <li class="media my-4">
+                            <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                                alt="testo alternativo">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </li>
+                        <div class="divider"></div>
+
+                        <li class="media">
+                            <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                                alt="testo alternativo">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
+
 
 
     </div>
@@ -358,10 +486,214 @@
 
 
     <div id="mySeg" style="display: none;">
-        3
+        <div class="col-md-6 responsive-map">
+            <div id="map">
+                <!-- DIV MAPPA CARICATA A RUN TIME-->
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="padding-adder">
+                <div id="collapseDiv1" class="collapse-div padding-bottom-collapse" role="tablist">
+                    <div class="collapse-header" id="heading1">
+                        <button data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
+                            aria-controls="collapse1">
+                            Filtra le segnalazioni
+                        </button>
+                    </div>
+                    <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1">
+                        <div class="collapse-body">
+                            <div>
+                                <div class="form-row">
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="inputAddress">
+                                        <label for="inputAddress">Luogo</label>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <svg class="icon icon-sm icon-primary">
+                                                    <use
+                                                        xlink:href="/bootstrap-italia/svg/sprite.svg#it-map-marker-circle">
+                                                    </use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="inputTitle">
+                                        <label for="inputCity">Testo</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col text-center">
+                                    <button type="submit" class="btn btn-outline-primary btn-xl">Filtra
+                                        <svg class="bg-white icon icon-primary icon-xs">
+                                            <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-funnel">
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELENCO DELLE SEGNALAZIONI TODO: DINAMICO E NON STATICO -->
+
+            <div>
+                <ul id="seg">
+                    <li class="media">
+                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                            alt="testo alternativo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li class="media my-4">
+                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                            alt="testo alternativo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+
+                    <li class="media">
+                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                            alt="testo alternativo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div id="gestSeg" style="display: none;">
-        4
+        <div class="col-md-6 responsive-map">
+            <div id="map">
+                <!-- DIV MAPPA CARICATA A RUN TIME-->
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="padding-adder">
+                <div id="collapseDiv1" class="collapse-div padding-bottom-collapse" role="tablist">
+                    <div class="collapse-header" id="heading1">
+                        <button data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
+                            aria-controls="collapse1">
+                            Filtra le segnalazioni
+                        </button>
+                    </div>
+                    <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1">
+                        <div class="collapse-body">
+                            <div>
+                                <div class="form-row">
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="inputAddress">
+                                        <label for="inputAddress">Luogo</label>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <svg class="icon icon-sm icon-primary">
+                                                    <use
+                                                        xlink:href="/bootstrap-italia/svg/sprite.svg#it-map-marker-circle">
+                                                    </use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="inputTitle">
+                                        <label for="inputCity">Testo</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col text-center">
+                                    <button type="submit" class="btn btn-outline-primary btn-xl">Filtra
+                                        <svg class="bg-white icon icon-primary icon-xs">
+                                            <use xlink:href="/bootstrap-italia/svg/sprite.svg#it-funnel">
+                                            </use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELENCO DELLE SEGNALAZIONI TODO: DINAMICO E NON STATICO -->
+
+            <div>
+                <ul id="seg">
+                    <li class="media">
+                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                            alt="testo alternativo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <li class="media my-4">
+                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                            alt="testo alternativo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+
+                    <li class="media">
+                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                            alt="testo alternativo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 
