@@ -28,7 +28,8 @@ function validaLoginMock() {
         document.getElementById("gestisci").hidden = false;
         $("#gestisci").show();
 
-        document.getElementById("gotoprofilo").classList.remove("disabled");
+        // document.getElementById("gotoprofilo").classList.remove("disabled");
+        document.getElementById("gotoprofilo").hidden = false;
         $('#wrongCred').hide();
         $('#entra').hide();
         $('#esci').show()
@@ -38,7 +39,8 @@ function validaLoginMock() {
         isAdmin = false;
         isLogged = true;
         $('#accediRegistrati').modal('hide');
-        document.getElementById("gotoprofilo").classList.remove("disabled");
+        // document.getElementById("gotoprofilo").classList.remove("disabled");
+        document.getElementById("gotoprofilo").hidden = false;
         $('#wrongCred').hide();
         $('#entra').hide();
         $('#esci').show()
@@ -53,8 +55,8 @@ function logOut() {
     isAdmin = false;
     isLogged = false;
     $('#gestisci').hide()
-    $('#gestisci').classList.remove("active");
-    document.getElementById("gotoprofilo").classList.add("disabled");
+    // document.getElementById("gotoprofilo").classList.add("disabled");
+    document.getElementById("gotoprofilo").hidden=true;
     $('#esci').hide()
     $('#entra').show();
     document.getElementById("gestisci").hidden = true;

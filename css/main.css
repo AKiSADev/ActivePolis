@@ -72,7 +72,7 @@ body {
 }
 
 .responsive-map {
-    position: relative;
+    position: fixed;
     padding-bottom: 35rem;
     padding-top: 5em;
     height: 0;
@@ -100,6 +100,15 @@ html {
 #seg {
     overflow-y: scroll;
     max-height: 500em;
+}
+
+.padding-bottom-collapse{
+    padding-bottom: 2em;
+}
+
+.bg-light{
+    background-color: white;
+    color: white;
 }
 
 @media screen and (max-width: 600px) {
