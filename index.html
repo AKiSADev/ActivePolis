@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
 
@@ -7,9 +7,9 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Active Polis</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/main.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/bootstrap-italia/css/bootstrap-italia.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/main.css'>
     <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
@@ -351,9 +351,9 @@
     <div id="tabProfilo" style="display: none;">
 
         <div class="row justify-content-md-right">
-            <div class="col-md-6 padding-adder">
+            <div class="col-md-6 container padding-adder">
                 <div class="d-flex align-items-center justify-content-around flex-wrap flex-sm-nowrap">
-
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                     <div class="avatar size-xxl">
                         <img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Giovanna Ferrero">
                     </div>
@@ -435,59 +435,32 @@
                 </div>
 
             </div>
-            <div class="col-md-6 padding-adder">
-                <div>
-                    <ul id="seg">
-                        <li class="media">
-                            <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                                alt="testo alternativo">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </li>
-                        <div class="divider"></div>
-                        <li class="media my-4">
-                            <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                                alt="testo alternativo">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </li>
-                        <div class="divider"></div>
 
-                        <li class="media">
-                            <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                                alt="testo alternativo">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="note-positioner container col-md-6">
+
+                <div class="pad-bottom-seg alert alert-info" role="alert">
+                   Le tue segnalazioni totali sono <b id="totali"></b>
+                  </div>
+                  <div class="pad-bottom-seg alert alert-success" role="alert">
+                    Le tue segnalazioni accettate sono <b id="accettate"></b>
+                  </div>
+                  <div class="pad-bottom-seg alert alert-warning" role="alert">
+                    Le tue segnalazioni in attesa sono <b id="attesa"></b>
+                  </div>
+                  <div class="pad-bottom-seg alert alert-danger" role="alert">
+                    Le tue segnalazioni rifiutate sono <b id="rifiutate"></b>
+                  </div>
+
             </div>
-
-
-        </div>
-
-
-
+         </div>
     </div>
 
 
 
-
+<!-- DIV DELLE MIE SEGNALAZIONI -->
     <div id="mySeg" style="display: none;">
         <div class="col-md-6 responsive-map">
-            <div id="map">
+            <div id="mapM">
                 <!-- DIV MAPPA CARICATA A RUN TIME-->
             </div>
         </div>
@@ -498,7 +471,7 @@
                     <div class="collapse-header" id="heading1">
                         <button data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
                             aria-controls="collapse1">
-                            Filtra le segnalazioni
+                            Filtra le segnalazioni<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                         </button>
                     </div>
                     <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1">
@@ -543,8 +516,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -590,9 +561,11 @@
             </div>
         </div>
     </div>
+
+    <!-- DIV DELLE SEGNALAZIONI DA GESTIRE-->
     <div id="gestSeg" style="display: none;">
         <div class="col-md-6 responsive-map">
-            <div id="map">
+            <div id="mapG">
                 <!-- DIV MAPPA CARICATA A RUN TIME-->
             </div>
         </div>

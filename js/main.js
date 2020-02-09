@@ -3,7 +3,7 @@ var isAdmin = true;
 var isLogged = true;
 var userMail;
 var userPass;
-var map;
+var map, map2, map3;
 
 var segnalazioni;
 
@@ -14,6 +14,8 @@ $(document).ready(function() {
     validaLoginMock();
 
     initMap();
+    initMapM();
+    initMapG();
 
 });
 
@@ -149,6 +151,51 @@ function initMap() {
 
 }
 
+function initMapM() {
+    map2 = new OpenLayers.Map("mapM", {
+        projection: new OpenLayers.Projection("EPSG:900913"),
+        displayProjection: new OpenLayers.Projection("EPSG:4326")
+    });
+
+    var mapnik2 = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
+
+    map2.addLayer(mapnik2);
+
+    var lonLat2 = new OpenLayers.LonLat(16.852, 41.1187)
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map2.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+    map2.setCenter(lonLat2, 13);
+
+    var LayerMarkers2 = new OpenLayers.Layer.Markers("Markers");
+    map2.addLayer(LayerMarkers2);
+
+}
+
+function initMapG() {
+    map3 = new OpenLayers.Map("mapG", {
+        projection: new OpenLayers.Projection("EPSG:900913"),
+        displayProjection: new OpenLayers.Projection("EPSG:4326")
+    });
+
+    var mapnik3 = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
+
+    map3.addLayer(mapnik3);
+
+    var lonLat3 = new OpenLayers.LonLat(16.852, 41.1187)
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map3.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+    map3.setCenter(lonLat3, 13);
+
+    var LayerMarkers3 = new OpenLayers.Layer.Markers("Markers");
+    map3.addLayer(LayerMarkers3);
+
+}
 
 
 //LA SEGUENTE FUNZIONE SERVIRÀ A CERCA IL POSTO DELLA SEGNALAZIONE

@@ -94,23 +94,42 @@ body {
     padding-left: 0em;
 }
 
-
 #seg {
     max-height: 500em;
 }
 
-.padding-bottom-collapse{
+.padding-bottom-collapse {
     padding-bottom: 2em;
 }
 
-.bg-light{
+.bg-light {
     background-color: white;
     color: white;
 }
 
-.stick-to-position{
+.stick-to-position {
     position: fixed;
     z-index: 2;
+}
+
+.scroller {
+    height: 90vh;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+.note-positioner {
+    padding-top: 6em;
+    padding-right: 3em;
+}
+
+.container{
+    padding-right: 6em;
+    padding-left: 3em;
+}
+
+.pad-bottom-seg{
+    padding-bottom: 2em;
 }
 
 @media screen and (max-width: 600px) {
@@ -121,10 +140,12 @@ body {
         height: 0;
         overflow: hidden;
     }
-
     body {
         padding-top: 8rem;
         height: 100%;
         width: 100%;
+    }
+    .note-positioner {
+        padding-top: 0em;
     }
 }
