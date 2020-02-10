@@ -1,0 +1,33 @@
+[
+    {
+        "titolo" : "Traffico statale 16 - uscita 13/B",
+        "testo" : "Si avvisano i cittadini che sulla statale 16 all'altezza dell'uscita 13/B il traffico è intenso. Ciò potrà comportare rallentamenti dello scorrimento stradale Si invitano perciò i cittadini a trovare strade alternative",
+        "lon" : 41.0892,
+        "lat" : 16.8895,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data" : "10/02/2020"
+    },
+
+    {
+        "titolo" : "Animali selvatici",
+        "testo" : "Segnalo che al quartiere san Paolo in via Lombardia sono presenti cinghiali vaganti, finchè non interviene la guardia forestale consiglio di tenersi lontano dal luogo",
+        "lon" : 41.128154,
+        "lat" : 16.797318,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "05/11/2019"
+    },
+    {
+        "titolo" : "Caravella di San Nicola",
+        "testo" : "Il comune di Bari segnala che il giorno 9 maggio come da tradizione si terrà l'evento della Caravella di San Nicola",
+        "lon" : 41.12681,
+        "lat" : 16.86601,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "05/05/2019"
+    }
+]

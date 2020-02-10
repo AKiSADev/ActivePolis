@@ -94,6 +94,10 @@ body {
     padding-left: 0em;
 }
 
+.padder-top{
+    padding-top: 2em;
+}
+
 #seg {
     max-height: 500em;
 }
@@ -132,7 +136,25 @@ body {
     padding-bottom: 2em;
 }
 
+.hidable-phone{
+    display: block;
+}
+
+label{
+    width: auto;
+}
+
+.line{
+    width: 100%;
+}
+
+
 @media screen and (max-width: 600px) {
+    .container{
+        padding-right: 2em;
+        padding-left: 1em;
+    }
+    
     .responsive-map {
         position: relative;
         padding-bottom: 200px;
@@ -141,11 +163,14 @@ body {
         overflow: hidden;
     }
     body {
-        padding-top: 8rem;
+        padding-top: 5rem;
         height: 100%;
         width: 100%;
     }
     .note-positioner {
         padding-top: 0em;
+    }
+    .hidable-phone{
+        display: none;
     }
 }

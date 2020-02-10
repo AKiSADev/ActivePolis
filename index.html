@@ -20,8 +20,8 @@
 <body>
 
     <div class="fixed-top it-header-wrapper">
-        <div class="it-header-slim-wrapper">
-            <div class="container">
+        <div class="hidable-phone it-header-slim-wrapper">
+            <div>
                 <div class="row">
                     <div class="col-12">
                         <div class="it-header-slim-wrapper-content">
@@ -84,13 +84,15 @@
         </div>
         <div class="it-nav-wrapper">
             <div class="it-header-center-wrapper">
-                <div class="container">
+                <div class="">
                     <div class="row">
                         <div class="col-12">
                             <div class="it-header-center-content-wrapper">
                                 <div class="it-brand-wrapper">
                                     <a href="#">
-                                        <img src="https://img.icons8.com/plasticine/100/000000/light-on.png">
+                                        <svg class="icon d-lg-block">
+                                            <use xlink:href="/icon/idea.svg#idea"></use>
+                                        </svg>
                                         <div class="it-brand-text">
                                             <h2 class="no_toc">ActivePolis</h2>
                                             <h3 class="no_toc d-none d-md-block">I cittadini in gioco</h3>
@@ -134,7 +136,7 @@
                 </div>
             </div>
             <div class=" it-header-navbar-wrapper">
-                <div class="container">
+                <div class="">
                     <div class="row">
                         <div class="col-12">
                             <!--start nav-->
@@ -183,13 +185,7 @@
                                                             <li><a class="list-item" href="#"><span>Arma dei
                                                                         Carabinieri</span></a></li>
                                                             <!-- Modal -->
-                                                            <div id="myModal" class="modal fade" role="dialog">oni
-                                                                current
-                                                                Il tuo profilo
-                                                                Le tue segnalazioni
-                                                                Gestisci le segnalazioni
-                                                                Link utili
-                                                                4
+                                                            <div id="myModal" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
 
                                                                     <!-- Modal content-->
@@ -243,7 +239,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 ">
             <div class="padding-adder">
                 <div id="collapseDiv1" class="collapse-div padding-bottom-collapse" role="tablist">
                     <div class="collapse-header" id="heading1">
@@ -276,7 +272,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle">
+                                        <input type="text" class="form-control" id="inputTitle" >
                                         <label for="inputCity">Testo</label>
                                     </div>
 
@@ -302,7 +298,7 @@
 
             <!-- ELENCO DELLE SEGNALAZIONI TODO: DINAMICO E NON STATICO -->
 
-            <div>
+            <div class="container">
                 <ul id="seg">
                     <li class="media">
                         <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
@@ -348,22 +344,22 @@
     <!--DIV DEL PROFILO -->
 
 
-    <div id="tabProfilo" style="display: none;">
+    <div id="tabProfilo" class="container" style="display: none;">
 
-        <div class="row justify-content-md-right">
-            <div class="col-md-6 container padding-adder">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6  padding-adder">
                 <div class="d-flex align-items-center justify-content-around flex-wrap flex-sm-nowrap">
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                     <div class="avatar size-xxl">
                         <img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Giovanna Ferrero">
                     </div>
                 </div>
-                <div class="padding-adder" id="infoProfilo">
+                <div class="padder-top form-row" id="infoProfilo">
 
-                    <div class="form-group">
+                    <div class="form-group line">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
-                                placeholder="Lorem Ipsum">
+                            <input type="text" class="form-control" id="input-group-1" name="input-group-2"
+                                placeholder="Maria">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -371,13 +367,13 @@
                                     </svg>
                                 </div>
                             </div>
-                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                            <label for="input-group-1">Nome</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group line">
                         <div class="input-group">
                             <input type="text" class="form-control" id="input-group-2" name="input-group-2"
-                                placeholder="Lorem Ipsum">
+                                placeholder="Rossi">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -385,13 +381,13 @@
                                     </svg>
                                 </div>
                             </div>
-                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                            <label for="input-group-2">Cognome</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group line">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
-                                placeholder="Lorem Ipsum">
+                            <input type="text" class="form-control" id="input-group-3" name="input-group-2"
+                                placeholder="RSSMAR58L64A662W">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -399,13 +395,13 @@
                                     </svg>
                                 </div>
                             </div>
-                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                            <label for="input-group-3">Codice fiscale</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group line">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
-                                placeholder="Lorem Ipsum">
+                            <input type="text" class="form-control" id="input-group-4" name="input-group-2"
+                                placeholder="maria.rossi@mail.it">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -413,13 +409,13 @@
                                     </svg>
                                 </div>
                             </div>
-                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                            <label for="input-group-4">Email</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group line">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="input-group-2" name="input-group-2"
-                                placeholder="Lorem Ipsum">
+                            <input type="password" class="form-control" id="input-group-5" name="input-group-2"
+                                placeholder="admin">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -427,7 +423,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <label for="input-group-2">Con Etichetta e placeholder</label>
+                            <label for="input-group-5">Password</label>
                         </div>
                     </div>
 
@@ -436,45 +432,21 @@
 
             </div>
 
-            <div class="note-positioner container col-md-6">
-
-                <div class="pad-bottom-seg alert alert-info" role="alert">
-                   Le tue segnalazioni totali sono <b id="totali"></b>
-                  </div>
-                  <div class="pad-bottom-seg alert alert-success" role="alert">
-                    Le tue segnalazioni accettate sono <b id="accettate"></b>
-                  </div>
-                  <div class="pad-bottom-seg alert alert-warning" role="alert">
-                    Le tue segnalazioni in attesa sono <b id="attesa"></b>
-                  </div>
-                  <div class="pad-bottom-seg alert alert-danger" role="alert">
-                    Le tue segnalazioni rifiutate sono <b id="rifiutate"></b>
-                  </div>
-
-            </div>
-         </div>
-    </div>
-
-
-
-<!-- DIV DELLE MIE SEGNALAZIONI -->
-    <div id="mySeg" style="display: none;">
-        <div class="col-md-6 responsive-map">
-            <div id="mapM">
-                <!-- DIV MAPPA CARICATA A RUN TIME-->
-            </div>
         </div>
-
-        <div class="col-md-6">
+    </div>
+    <!-- DIV DELLE MIE SEGNALAZIONI -->
+    <div id="mySeg" style="display: none;">
+        <div class="container">
             <div class="padding-adder">
-                <div id="collapseDiv1" class="collapse-div padding-bottom-collapse" role="tablist">
-                    <div class="collapse-header" id="heading1">
-                        <button data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
-                            aria-controls="collapse1">
-                            Filtra le segnalazioni<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <div id="collapseFiltroMy" class="collapse-div padding-bottom-collapse" role="tablist">
+                    <div class="collapse-header" id="heading2">
+                        <button data-toggle="collapse" data-target="#collapse2" aria-expanded="false"
+                            aria-controls="collapse2">
+                            Filtra le segnalazioni
+                            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                         </button>
                     </div>
-                    <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1">
+                    <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2">
                         <div class="collapse-body">
                             <div>
                                 <div class="form-row">
@@ -482,8 +454,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress">
-                                        <label for="inputAddress">Luogo</label>
+                                        <input type="text" class="form-control" id="inputAddress2">
+                                        <label for="inputAddress2">Luogo</label>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <svg class="icon icon-sm icon-primary">
@@ -498,8 +470,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle">
-                                        <label for="inputCity">Testo</label>
+                                        <input type="text" class="form-control" id="inputTitle2">
+                                        <label for="inputTitle2">Testo</label>
                                     </div>
 
                                 </div>
@@ -523,7 +495,7 @@
             <!-- ELENCO DELLE SEGNALAZIONI TODO: DINAMICO E NON STATICO -->
 
             <div>
-                <ul id="seg">
+                <ul id="seg2">
                     <li class="media">
                         <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
                             alt="testo alternativo">
@@ -564,22 +536,16 @@
 
     <!-- DIV DELLE SEGNALAZIONI DA GESTIRE-->
     <div id="gestSeg" style="display: none;">
-        <div class="col-md-6 responsive-map">
-            <div id="mapG">
-                <!-- DIV MAPPA CARICATA A RUN TIME-->
-            </div>
-        </div>
-
-        <div class="col-md-6">
+        <div class="container">
             <div class="padding-adder">
-                <div id="collapseDiv1" class="collapse-div padding-bottom-collapse" role="tablist">
-                    <div class="collapse-header" id="heading1">
-                        <button data-toggle="collapse" data-target="#collapse1" aria-expanded="false"
-                            aria-controls="collapse1">
+                <div id="collapseDiv3" class="collapse-div padding-bottom-collapse" role="tablist">
+                    <div class="collapse-header" id="heading3">
+                        <button data-toggle="collapse" data-target="#collapse3" aria-expanded="false"
+                            aria-controls="collapse3">
                             Filtra le segnalazioni
                         </button>
                     </div>
-                    <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1">
+                    <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3">
                         <div class="collapse-body">
                             <div>
                                 <div class="form-row">
@@ -587,8 +553,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress">
-                                        <label for="inputAddress">Luogo</label>
+                                        <input type="text" class="form-control" id="inputAddress3">
+                                        <label for="inputAddress3">Luogo</label>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <svg class="icon icon-sm icon-primary">
@@ -603,8 +569,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle">
-                                        <label for="inputCity">Testo</label>
+                                        <input type="text" class="form-control" id="inputTitle3">
+                                        <label for="inputTitle3">Testo</label>
                                     </div>
 
                                 </div>
@@ -630,7 +596,7 @@
             <!-- ELENCO DELLE SEGNALAZIONI TODO: DINAMICO E NON STATICO -->
 
             <div>
-                <ul id="seg">
+                <ul id="seg3">
                     <li class="media">
                         <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
                             alt="testo alternativo">
@@ -753,7 +719,6 @@
                                     <label for="cognome">Cognome</label>
                                 </div>
                                 <button class="btn btn-primary" type="submit">Registrati</button>
-                            </form>
                         </div>
                     </div>
                 </div>
