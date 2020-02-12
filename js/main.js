@@ -5,6 +5,7 @@ var userMail;
 var userPass;
 var map;
 var LayerMarkers;
+var idUtente;
 
 var segnalazioni;
 
@@ -41,6 +42,8 @@ function validaLoginMock() {
         $('#wrongCred').hide();
         $('#entra').hide();
         $('#esci').show()
+        $('#loginlink').hide();
+        $('#logoutlink').show()
     }
     //user
     else if ((isLogged) || userMail == "user@user.it" && userPass == "user") {
@@ -52,6 +55,8 @@ function validaLoginMock() {
         $('#wrongCred').hide();
         $('#entra').hide();
         $('#esci').show()
+        $('#loginlink').hide();
+        $('#logoutlink').show()
         document.getElementById("gestisci").hidden = true;
     } else {
         $('#wrongCred').show();
@@ -67,6 +72,8 @@ function logOut() {
     document.getElementById("gotoprofilo").hidden=true;
     $('#esci').hide()
     $('#entra').show();
+    $('#logoutlink').hide()
+    $('#loginlink').show();
     document.getElementById("gestisci").hidden = true;
 }
 
@@ -194,8 +201,8 @@ function caricaSegnalazioniAll(){
                 //Loop through the markers array
                 
                   
-                   var lon = result[i].lat;
-                   var lat = result[i].lon;
+                   var lon = result[i].lon;
+                   var lat = result[i].lat;
                    
                     var feature = new OpenLayers.Feature.Vector(
                             new OpenLayers.Geometry.Point( lon, lat ).transform(epsg4326, projectTo),
@@ -220,4 +227,8 @@ function caricaSegnalazioniGest(){
             console.log(result);
         }
     });
+}
+
+function addSegnalazione(){
+
 }

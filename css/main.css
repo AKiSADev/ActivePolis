@@ -148,6 +148,9 @@ label{
     width: 100%;
 }
 
+.hidable-pc{
+    display: none;
+}
 
 @media screen and (max-width: 600px) {
     .container{
@@ -172,5 +175,9 @@ label{
     }
     .hidable-phone{
         display: none;
+    }
+
+    .hidable-pc{
+        display: block;
     }
 }
