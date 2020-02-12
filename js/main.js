@@ -133,11 +133,6 @@ $(function() {
     });
 });
 
-// $(document).click(function(event) {
-//     console.log($(event.target));
-// });
-
-
 function initMap() {
     map = new OpenLayers.Map("map", {
         projection: new OpenLayers.Projection("EPSG:900913"),
@@ -170,19 +165,13 @@ function getPosition(place) {
             console.log(result.results[0]);
         }
     });
-
-    //AGGIUNGI MARKER DI SEGUITO
    
 }
 
-
-function caricaSegnalazioniMine(){
-    $.ajax({
-        url: "/json/segnalazioni-base.json",
-        success: function(result) {
-            console.log(result);
-        }
-    });
+function assignSegnalazioni(result){
+    for (i = 0; i < result.length; i++){
+       generateSegnalazione(result[i]);
+    }
 }
 
 function caricaSegnalazioniAll(){
@@ -190,6 +179,7 @@ function caricaSegnalazioniAll(){
         url: "/json/segnalazioni-base.json",
         success: function(result) {
             console.log(result);
+            assignSegnalazioni(result);
             var projectTo = map.getProjectionObject();
             var epsg4326 =  new OpenLayers.Projection("EPSG:4326");
             var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
@@ -220,15 +210,7 @@ function caricaSegnalazioniAll(){
     });
 }
 
-function caricaSegnalazioniGest(){
-    $.ajax({
-        url: "/json/segnalazioni-base.json",
-        success: function(result) {
-            console.log(result);
-        }
-    });
-}
-
-function addSegnalazione(){
-
+function generateSegnalazione(result){
+    //TODO PER GENERARE LA SEGNALAZIONE
+    //RICORDATI CHE AL CLICK DEVE APRIRE SIA IL MODAL DI LETTURA CHE QUELLE CHE VANNO IN GESTIONE DEVONO APRIRE IL MODAL DI GESTIONE
 }
