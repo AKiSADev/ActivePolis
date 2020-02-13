@@ -6,8 +6,6 @@
         "lat" : 41.0892,
         "lon" : 16.8895,
         "autore" : 1,
-        "stato" : 2,
-        "gravita" : 1, 
         "tipologia" : 1,
         "images" : [],
         "data" : "10/02/2020"
@@ -20,8 +18,6 @@
         "lat" : 41.128154,
         "lon" : 16.797318,
         "autore" : 1,
-        "gravita" : 1, 
-        "tipologia" : 3,
         "stato" : 2,
         "images" : [],
         "data": "05/11/2019"
@@ -33,10 +29,65 @@
         "lat" : 41.12681,
         "lon" : 16.86601,
         "autore" : 1,
-        "gravita" : 1, 
-        "tipologia" : 2,
         "stato" : 2,
         "images" : [],
         "data": "05/05/2019"
+    },
+    {
+        "id" : 4,
+        "titolo" : "Palazzo in Pericolo di Crollo",
+        "testo" : "C'è un palazzo in via Valona dal quale cadono pezzi di calcestruzzo, si consiglia di evitare di camminarci sotto",
+        "lat" : 41.1198485,
+        "lon" : 16.879529,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "09/02/2020"
+    },
+
+    {
+        "id" : 5,
+        "titolo" : "Malfunzionamento di un Bus con Incendio",
+        "testo" : "Un bus, in viale Orazio Flacco, ha avuto un problema al motore e l'ultimo ha preso fuoco, evitare di percorrere la strada a causa delle code e del pericolo.",
+        "lat" : 41.1087415,
+        "lon" : 16.8579326,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "24/10/2019"
+    },
+    {
+        "id" : 6,
+        "titolo" : "Rapina alle Poste",
+        "testo" : "Alle poste in via Mogadiscio si è verificata una rapina, la strada è bloccata e pericolosa",
+        "lat" : 41.137831,
+        "lon" : 16.8418183,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "25/01/2020"
+    },
+
+    {
+        "id" : 7,
+        "titolo" : "Sparatoria in zona San Paolo",
+        "testo" : "Ci sono stati colpi di pistola vicino via Liguria, in zona San Paolo, si consiglia di restare al chiuso",
+        "lat" : 41.1180045,
+        "lon" : 16.7904165,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "7/02/2020"
+    },
+    {
+        "id" : 8,
+        "titolo" : "Rifiuti abbandonati sulla strada",
+        "testo" : "Molti rifiuti abbandonati in strada San Giorgio Martire, vicino la Stazione Centrale, si richiede di intervenire.",
+        "lat" : 41.116641,
+        "lon" : 16.8456909,
+        "autore" : 1,
+        "stato" : 2,
+        "images" : [],
+        "data": "7/02/2020"
     }
 ]

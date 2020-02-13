@@ -20,6 +20,7 @@ $(document).ready(function() {
     validaLoginMock();
 
     initMap();
+
     caricaSegnalazioniAll();
 
 });
@@ -179,8 +180,10 @@ function assignSegnalazioni(result){
 
 function caricaSegnalazioniAll(){
     $.ajax({
-        url: "/json/segnalazioni-base.json",
+        url: "json/segnalazioni-base.json",
         success: function(result) {
+
+            debugger;
             console.log(result);
             assignSegnalazioni(result);
             var projectTo = map.getProjectionObject();
@@ -194,13 +197,17 @@ function caricaSegnalazioniAll(){
                     var feature = new OpenLayers.Feature.Vector(
                             new OpenLayers.Geometry.Point( lon, lat ).transform(epsg4326, projectTo),
                             {description: "marker number " + i} ,
-                            {externalGraphic: '/img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
+                            {externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
                         );             
                     vectorLayer.addFeatures(feature);
 
             }
             map.addLayer(vectorLayer);
+        }, 
+        error: function(result){
+            console.log(result);
         }
+        
     });
 }
 
