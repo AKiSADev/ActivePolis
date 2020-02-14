@@ -7,6 +7,7 @@
         "lon" : 16.8895,
         "autore" : 1,
         "tipologia" : 1,
+        "stato" : 1,
         "images" : [],
         "data" : "10/02/2020"
     },
@@ -17,8 +18,8 @@
         "testo" : "Segnalo che al quartiere san Paolo in via Lombardia sono presenti cinghiali vaganti, finchè non interviene la guardia forestale consiglio di tenersi lontano dal luogo",
         "lat" : 41.128154,
         "lon" : 16.797318,
-        "autore" : 1,
-        "stato" : 2,
+        "autore" : 2,
+        "stato" : 3,
         "images" : [],
         "data": "05/11/2019"
     },
@@ -39,12 +40,11 @@
         "testo" : "C'è un palazzo in via Valona dal quale cadono pezzi di calcestruzzo, si consiglia di evitare di camminarci sotto",
         "lat" : 41.1198485,
         "lon" : 16.879529,
-        "autore" : 1,
-        "stato" : 2,
+        "autore" : 2,
+        "stato" : 3,
         "images" : [],
         "data": "09/02/2020"
     },
-
     {
         "id" : 5,
         "titolo" : "Malfunzionamento di un Bus con Incendio",
@@ -67,7 +67,6 @@
         "images" : [],
         "data": "25/01/2020"
     },
-
     {
         "id" : 7,
         "titolo" : "Sparatoria in zona San Paolo",
@@ -85,8 +84,8 @@
         "testo" : "Molti rifiuti abbandonati in strada San Giorgio Martire, vicino la Stazione Centrale, si richiede di intervenire.",
         "lat" : 41.116641,
         "lon" : 16.8456909,
-        "autore" : 1,
-        "stato" : 2,
+        "autore" : 2,
+        "stato" : 3,
         "images" : [],
         "data": "7/02/2020"
     }

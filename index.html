@@ -162,7 +162,7 @@
                                             <li class="nav-item"><a id="gotoprofilo" class="nav-link" href="#"
                                                     onclick="gotoProfilo()" hidden=true><span>Il tuo profilo</span></a>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="#"
+                                            <li id="yourSeg" class="nav-item" hidden=true><a class="nav-link" href="#"
                                                     onclick="gotoMySeg()"><span>Le tue
                                                         segnalazioni</span></a></li>
                                             <li class="nav-item" id="gestisci" hidden=true><a class="nav-link" href="#"
@@ -452,18 +452,6 @@
 
             <div>
                 <ul id="seg2">
-                    <li id="segnalazioneFake" class="media" style="display: none;">
-                        <img class="immagine mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                            alt="testo alternativo">
-                        <div class="media-body">
-                            <h5 class="titolo mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                            <div class="corpo">
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                                condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -532,39 +520,7 @@
 
             <div>
                 <ul id="seg3">
-                    <li class="media">
-                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                            alt="testo alternativo">
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </li>
-                    <div class="divider"></div>
-                    <li class="media my-4">
-                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                            alt="testo alternativo">
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </li>
-                    <div class="divider"></div>
 
-                    <li class="media">
-                        <img class="mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                            alt="testo alternativo">
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-1">Elenco basato sull'oggetto media</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -735,15 +691,14 @@
                 <div class="modal-body">
                     <div class="col-12 col-lg-6">
                         <!--start card-->
-                        <div class="card-wrapper">
-                            <div class="card card-img no-after">
-                                <div class="img-responsive-wrapper">
-                                    <div class="img-responsive img-responsive-panoramic">
-                                        <figure class="img-wrapper">
-                                            <img src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
-                                                title="img title" alt="imagealt">
-                                        </figure>
-                                    </div>
+                        <div class="card card-img no-after">
+                            <div class="img-responsive-wrapper">
+                                <div class="img-responsive img-responsive-panoramic">
+                                    <figure class="img-wrapper">
+                                        <img class="immagine"
+                                            src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
+                                            title="img title" alt="imagealt">
+                                    </figure>
                                 </div>
                             </div>
                         </div>
@@ -763,76 +718,49 @@
     </div>
 
     <!-- MODAL GESTISCI SEGNALAZIONE -->
+
+    <!--start card-->
     <div id="modal-gestisci" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 id="title" class="modal-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-12 col-lg-6">
-                        <!--start card-->
-                        <div class="card-wrapper">
-                            <div class="card card-img no-after">
-                                <div class="img-responsive-wrapper">
-                                    <div class="img-responsive img-responsive-panoramic">
-                                        <figure class="img-wrapper">
-                                            <img src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
-                                                title="img title" alt="imagealt">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Gestisci segnalazione</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="titolo" required>
-                                        <label for="titolo"></label>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        <label for="descrizione"></label>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" onclick="accettaSegnalazione()"
-                                        data-dismiss="modal">Accetta</button>
-                                    <button type="button" class="btn btn-primary" onclick="rifiutaSegnalazione()"
-                                        data-dismiss="modal">Rifiuta</button>
-                                </div><button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Annulla</button>
-                            </div>
-                        </div>
-
-                        <!--end card-->
-                    </div>
-
-                    <div>
-                        <p class="descrizione"> </p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button id="accetta" type="button" class="btn btn-primary" data-dismiss="modal">accetta</button>
-                    <button id="rifiuta" type="button" class="btn btn-primary" data-dismiss="modal">rifiuta</button>
-                </div><button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gestisci segnalazione</h5>
+                <button type="button" class="close" data-dismiss="modal-gestisci" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <div class="card-wrapper">
+                    <div class="card card-img no-after">
+                        <div class="img-responsive-wrapper">
+                            <div class="img-responsive img-responsive-panoramic">
+                                <figure class="img-wrapper">
+                                    <img src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
+                                        title="img title" alt="imagealt">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="titolo-seg"></h6>
+                <div>
+                    <p class="descrizione"> </p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="accetta" type="button" class="btn btn-primary" data-dismiss="modal">accetta</button>
+                <button id="rifiuta" type="button" class="btn btn-primary" data-dismiss="modal">rifiuta</button>
+            </div>
+
         </div>
+
+        <!--end card-->
     </div>
+
 
     <!-- FAB -->
     <div class="btn-group-fab" role="group" aria-label="FAB Menu" data-toggle="modal"
-        data-target="#modal-addSegnalazione">
+        data-target="#modal-addSegnalazione" style="display: none;">
         <div>
             <button type="button" id="fab" class="btn btn-main btn-primary has-tooltip" data-placement="left"
                 title="Menu"><svg class="icon icon-white ">
@@ -842,7 +770,20 @@
     </div>
 
 
-
+    <ul id="seg4" style="display: none;">
+        <li id="segnalazioneFake" class="media segnalazione" style="display: none;">
+            <img class="immagine mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
+                alt="testo alternativo">
+            <div class="media-body">
+                <h5 class="titolo mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                <div class="corpo">
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div>
+        </li>
+    </ul>
 
 
     <script>
