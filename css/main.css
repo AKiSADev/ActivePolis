@@ -158,6 +158,13 @@ label{
     margin-bottom: 2em;
 }
 
+.immagine{
+    padding-right: 5px;
+}
+
+.descrizione{
+    padding-top: 2em;
+}
 
 @media screen and (max-width: 600px) {
     .container{

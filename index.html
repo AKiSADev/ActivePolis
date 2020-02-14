@@ -168,15 +168,12 @@
                                             <li class="nav-item" id="gestisci" hidden=true><a class="nav-link" href="#"
                                                     onclick="gotoGestSeg()"><span>Gestisci le
                                                         segnalazioni</span></a></li>
-                                            <li class="nav-item hidable-pc" id="loginlink" hidden=true><a
-                                                    class="nav-link" href="#" data-toggle="modal"
-                                                    data-target="#accediRegistrati"><span>Accedi o
-                                                        registrati</span></a>
-                                            </li>
-                                            <li class="nav-item hidable-pc" id="logoutlink" hidden=true><a
-                                                    class="nav-link" href="#" data-toggle="modal"
-                                                    data-target="#logout-modal"><span>LogOut</span></a></li>
-
+                                            <li class="nav-item hidable-pc" id="loginlink"><a class="nav-link" href="#"
+                                                    data-toggle="modal" data-target="#accediRegistrati"><span>Log
+                                                        in</span></a></li>
+                                            <li class="nav-item hidable-pc" id="logoutlink"><a class="nav-link" href="#"
+                                                    data-toggle="modal" data-target="#logout-modal" ><span>Log
+                                                        out</span></a></li>
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                                     aria-expanded="false">
@@ -242,8 +239,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress">
                                         <label for="inputAddress">Luogo</label>
+                                        <input type="text" class="form-control" id="inputAddress">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
                                                 <svg class="icon icon-sm icon-primary">
@@ -258,8 +255,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle">
                                         <label for="inputCity">Testo</label>
+                                        <input type="text" class="form-control" id="inputTitle">
                                     </div>
 
                                 </div>
@@ -314,7 +311,7 @@
                     <div class="form-group line">
                         <div class="input-group">
                             <input type="text" class="form-control" id="input-group-1" name="input-group-2"
-                                placeholder="Maria">
+                                placeholder="Maria" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -328,7 +325,7 @@
                     <div class="form-group line">
                         <div class="input-group">
                             <input type="text" class="form-control" id="input-group-2" name="input-group-2"
-                                placeholder="Rossi">
+                                placeholder="Rossi" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -342,7 +339,7 @@
                     <div class="form-group line">
                         <div class="input-group">
                             <input type="text" class="form-control" id="input-group-3" name="input-group-2"
-                                placeholder="RSSMAR58L64A662W">
+                                placeholder="RSSMAR58L64A662W" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -356,7 +353,7 @@
                     <div class="form-group line">
                         <div class="input-group">
                             <input type="text" class="form-control" id="input-group-4" name="input-group-2"
-                                placeholder="maria.rossi@mail.it">
+                                placeholder="maria.rossi@mail.it" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -370,7 +367,7 @@
                     <div class="form-group line">
                         <div class="input-group">
                             <input type="password" class="form-control" id="input-group-5" name="input-group-2"
-                                placeholder="admin">
+                                placeholder="admin" disabled>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <svg class="icon icon-sm icon-primary">
@@ -655,24 +652,37 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="titoloadd" required>
+                        <input type="text" class="form-control" id="titoloadd"
+                            placeholder="Inserisci qui un titolo riassuntivo" required>
                         <label for="titoloadd">Titolo</label>
                     </div>
                     <div class="form-group">
+                        <input type="text" class="form-control" id="positionadd" placeholder="Inserisci una via"
+                            aria-describedby="descrizionePos" required>
+                        <label for="positionadd">Luogo</label>
+                        <small id="descrizionePos" class="form-text text-muted">Scrivi una via oppure clicka sul
+                            pulsante Localizzami</small>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary">
+                            Localizzami
+                        </button>
+                    </div>
+                    <div class="form-group" placeholder="Inserisci qui la descrizione di ciò che è successo">
                         <textarea id="descrizione" rows="6"></textarea>
                         <label for="descrizione">Descrivi cosa è successo</label>
                     </div>
                     <div class="custom-file" id="customFile" lang="es">
                         <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
                         <label class="custom-file-label" for="exampleInputFile">
-                            Scegli una foto
+                            Puoi caricare una foto per documentare quello che è successo
                         </label>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="addSegnalazione()"
                         data-dismiss="modal">Segnala</button>
-                </div><button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                </div>
             </div>
         </div>
     </div>
@@ -691,17 +701,17 @@
                 <div class="modal-body">
                     <div class="col-12 col-lg-6">
                         <!--start card-->
-                        <div class="card card-img no-after">
-                            <div class="img-responsive-wrapper">
-                                <div class="img-responsive img-responsive-panoramic">
-                                    <figure class="img-wrapper">
-                                        <img class="immagine"
-                                            src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
-                                            title="img title" alt="imagealt">
-                                    </figure>
-                                </div>
+
+                        <div class="img-responsive-wrapper">
+                            <div class="img-responsive img-responsive-panoramic">
+                                <figure class="img-wrapper">
+                                    <img class="immagine"
+                                        src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
+                                        title="img title" alt="imagealt">
+                                </figure>
                             </div>
                         </div>
+
                         <!--end card-->
                     </div>
 
@@ -710,51 +720,57 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="addSegnalazione()"
-                        data-dismiss="modal">Segnala</button>
-                </div><button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!--end card-->
     </div>
 
     <!-- MODAL GESTISCI SEGNALAZIONE -->
 
     <!--start card-->
     <div id="modal-gestisci" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Gestisci segnalazione</h5>
-                <button type="button" class="close" data-dismiss="modal-gestisci" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="card-wrapper">
-                    <div class="card card-img no-after">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="title" class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body justify-content-center">
+                    <div class="col-12 col-lg-6">
+                        <!--start card-->
+
                         <div class="img-responsive-wrapper">
                             <div class="img-responsive img-responsive-panoramic">
                                 <figure class="img-wrapper">
-                                    <img src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
+                                    <img class="immagine"
+                                        src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
                                         title="img title" alt="imagealt">
                                 </figure>
                             </div>
                         </div>
+
+                        <!--end card-->
                     </div>
+                    <p class="descrizione">
+
+                    </p>
+
                 </div>
-                <h6 class="titolo-seg"></h6>
-                <div>
-                    <p class="descrizione"> </p>
+                <div class="modal-footer">
+                    <button id="ADD" type="button" class="btn btn-primary" data-dismiss="modal">Accetta</button>
+
+                    <button id="DEL" type="button" class="btn btn-primary" data-dismiss="modal">Rifiuta</button>
                 </div>
             </div>
-
-            <div class="modal-footer">
-                <button id="accetta" type="button" class="btn btn-primary" data-dismiss="modal">accetta</button>
-                <button id="rifiuta" type="button" class="btn btn-primary" data-dismiss="modal">rifiuta</button>
-            </div>
-
         </div>
+    </div>
 
-        <!--end card-->
+    <!--end card-->
     </div>
 
 
@@ -772,8 +788,8 @@
 
     <ul id="seg4" style="display: none;">
         <li id="segnalazioneFake" class="media segnalazione" style="display: none;">
-            <img class="immagine mr-3" src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine"
-                alt="testo alternativo">
+            <img class="immagine align-self-center mr-3"
+                src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" alt="testo alternativo">
             <div class="media-body">
                 <h5 class="titolo mt-0 mb-1">Elenco basato sull'oggetto media</h5>
                 <div class="corpo">
@@ -781,7 +797,11 @@
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
                     condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                 </div>
+                <svg class="icon d-lg-block icon-position">
+                    <use class="iconSVG" xlink:href="bootstrap-italia/svg/sprite.svg#it-check-circle"></use>
+                </svg>
             </div>
+
         </li>
     </ul>
 

@@ -8,6 +8,15 @@ var LayerMarkers;
 var idUtente;
 var seg;
 
+var utente = {
+    pimage : "",
+    nome : "",
+    cognome : "",
+    cf : "",
+    email : "",
+    pass : ""
+}
+
 var segnalazioni;
 
 $(document).ready(function () {
@@ -41,6 +50,9 @@ function validaLoginMock() {
         // document.getElementById("gotoprofilo").classList.remove("disabled");
         document.getElementById("gotoprofilo").hidden = false;
         document.getElementById("yourSeg").hidden = false;
+
+        
+
         $('#wrongCred').hide();
 
         $('#entra').hide();
@@ -48,8 +60,10 @@ function validaLoginMock() {
 
         $('#esci').show();
         $('#logoutlink').show();
+
         clearSeg();
         caricaSegnalazioniAll();
+        caricaInfoUtente();
 
         $(".btn-group-fab").show();
     }
@@ -61,6 +75,7 @@ function validaLoginMock() {
         $('#accediRegistrati').modal('hide');
         // document.getElementById("gotoprofilo").classList.remove("disabled");
         document.getElementById("gotoprofilo").hidden = false;
+
         $('#wrongCred').hide();
 
         $('#entra').hide();
@@ -72,14 +87,14 @@ function validaLoginMock() {
         document.getElementById("gestisci").hidden = true;
         clearSeg();
         caricaSegnalazioniAll();
-
+        caricaInfoUtente();
         $(".btn-group-fab").show();
     } else {
         $('#wrongCred').show();
         document.getElementById("gestisci").hidden = true;
     }
     
-    caricaInfoUtente();
+   
 }
 
 function logOut() {
@@ -92,8 +107,8 @@ function logOut() {
     $('#esci').hide();
     $('#entra').show();
     $('#logoutlink').hide();
-    $('#loginlink').show();
-
+    $('#logoutlink').show();
+    
     $(".btn-group-fab").hide();
 
     document.getElementById("gestisci").hidden = true;
@@ -260,6 +275,8 @@ function generateSegnalazione(result) {
 }
 
 function appendtoSeg(result){
+
+    debugger;
     let segnalazioneHTML = $("#segnalazioneFake");
 
     let seg = segnalazioneHTML.clone();
@@ -285,7 +302,7 @@ function appendToGest(result){
     seg.show();
 
     seg.css({"border" : "1px solid #FFFF33" , "border-radius" : "10px"});
-
+    seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-clock");
     $("#seg3").append(seg);
 }
 
@@ -299,12 +316,18 @@ function appendtoMySeg(result){
     seg.attr("id", result.id);
     seg.show();
 
-    if (result.stato == 1)
+    if (result.stato == 1){
         seg.css({"border" : "1px solid #FFFF33" , "border-radius" : "10px"});
-    else if (result.stato == 2)
+        seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-clock");
+    }
+    else if (result.stato == 2){
         seg.css({"border" : "1px solid #90EE90" , "border-radius" : "10px"});
-    else 
+        seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-check-circle");
+    }
+    else{ 
         seg.css({"border" : "1px solid #DC143C" , "border-radius" : "10px"});
+        seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg# it-close-circle");
+    }
 
     $("#seg2").append(seg);
 }
@@ -324,14 +347,19 @@ function addSegnalazione() {
 
 
     seg.id = segnalazioni.length;
-    seg.titolo = modal.find("#titoloadd").html;
-    seg.testo = modal.find("#descrizione").html;
+    seg.titolo = modal.find("#titoloadd").val();
+    seg.testo = modal.find("#descrizione").val();
     seg.autore = idUtente;
-    seg.stato = 1;
-    seg.images.push(modal.find(".image"));
+    seg.stato = idUtente == 1 ? 1 : 2;
+
+    debugger;
+
+    if (modal.find(".image").length > 0){
+        seg.images.push(modal.find(".image"));
+    }
     seg.data = Date.now();
 
-    segnalazioni.add(seg);
+    segnalazioni.push(seg);
 
     generateSegnalazione(seg);
 }
@@ -349,10 +377,36 @@ function clearSeg(){
 
 function caricaInfoUtente(){
 
+    if (idUtente == 1){
+        utente.pimage = "https://randomuser.me/api/portraits/men/21.jpg"
+        utente.nome = "Mario";
+        utente.cognome = "Rossi";
+        utente.cf = "RSSMAR56G22A662N";
+        utente.email = "admin@admin.it";
+        utente.pass = "admin";
+    }else{
+        utente.pimage = "https://randomuser.me/api/portraits/women/24.jpg"
+        utente.nome = "Anastasia";
+        utente.cognome = "Mazza";
+        utente.cf = "MZZNST56G62A662N";
+        utente.email = "user@user.it";
+        utente.pass = "user";
+    }
+
+    $(".avatar").find("img").attr("src",utente.pimage);
+    $("#input-group-1").val(utente.nome);
+    $("#input-group-2").val(utente.cognome);
+    $("#input-group-3").val(utente.cf);
+    $("#input-group-4").val(utente.email);
+    $("#input-group-5").val(utente.pass);
 }
 
 $("#seg").on("click", "li.segnalazione", function(event){
     $('#modal-leggi').modal('toggle');
+
+    let id = $( this ).attr('id')
+
+    let result = segnalazioni[id-1];
 
     let modale = $('#modal-leggi');
 
@@ -367,8 +421,63 @@ $("#seg").on("click", "li.segnalazione", function(event){
 
 $("#seg2").on("click", "li.segnalazione", function(event){
     $('#modal-leggi').modal('toggle');
+
+    let id = $( this ).attr('id')
+
+    let result = segnalazioni[id-1];
+
+    let modale = $('#modal-leggi');
+
+    modale.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    modale.find("#title").html(result.titolo);
+    modale.find(".descrizione").html(result.testo);
 });
 
 $("#seg3").on("click", "li.segnalazione", function(event){
     $('#modal-gestisci').modal('toggle');
+
+    let id = $( this ).attr('id')
+
+    let result = segnalazioni[id-1];
+
+    let modale = $('#modal-gestisci');
+
+    modale.attr("val", id);
+
+    modale.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    modale.find("#title").html(result.titolo);
+    modale.find(".descrizione").html(result.testo);
+
 });
+
+$("#ADD").on("click", function(event){
+    $('#modal-gestisci').modal('toggle');
+
+    let id = $('#modal-gestisci').attr('val');
+
+    let result = segnalazioni[id-1];
+
+    result.stato = 2;
+    removeFromMySeg(id);
+
+    appendtoSeg(result);
+
+});
+
+$("#DEL").on("click", function(event){
+    $('#modal-gestisci').modal('toggle');
+
+    let id = $('#modal-gestisci').attr('val');
+
+    let result = segnalazioni[id-1];
+
+
+    result.stato = 3;
+
+    removeFromMySeg(id);
+
+});
+
+function removeFromMySeg(id){
+    $('#' + id).remove();
+}
