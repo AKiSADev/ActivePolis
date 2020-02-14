@@ -1,12 +1,14 @@
 // var gestisciSegnalazioni = false;
-var isAdmin = true;
-var isLogged = true;
+var isAdmin = false;
+var isLogged = false;
 var userMail;
 var userPass;
 var map;
 var LayerMarkers;
 var idUtente;
 var seg;
+
+var byPassLogin = false;
 
 var utente = {
     pimage : "",
@@ -22,15 +24,13 @@ var segnalazioni;
 $(document).ready(function () {
     console.log("ready!");
 
+    $('#logoutlink').hide();
+
     segnalazioni = [];
-
-
-    //da levare quando testi
-    validaLoginMock();
 
     initMap();
 
-    // caricaSegnalazioniAll();
+    caricaSegnalazioniAll();
 
 });
 
@@ -39,7 +39,7 @@ function validaLoginMock() {
     userPass = document.getElementById("passLogIn").value;
 
     //admin
-    if ((isAdmin && isLogged) || userMail == "admin@admin.it" && userPass == "admin") {
+    if (userMail == "admin@admin.it" && userPass == "admin") {
         idUtente = 1;
         isAdmin = true;
         isLogged = true;
@@ -68,7 +68,7 @@ function validaLoginMock() {
         $(".btn-group-fab").show();
     }
     //user
-    else if ((isLogged) || userMail == "user@user.it" && userPass == "user") {
+    else if ((byPassLogin) || userMail == "user@user.it" && userPass == "user") {
         idUtente = 2;
         isAdmin = false;
         isLogged = true;
@@ -107,7 +107,7 @@ function logOut() {
     $('#esci').hide();
     $('#entra').show();
     $('#logoutlink').hide();
-    $('#logoutlink').show();
+    $('#loginlink').show();
     
     $(".btn-group-fab").hide();
 
@@ -481,3 +481,11 @@ $("#DEL").on("click", function(event){
 function removeFromMySeg(id){
     $('#' + id).remove();
 }
+
+$("#registratibtn").on("click", function(event){
+
+    byPassLogin = true;
+
+    validaLoginMock();
+
+});
