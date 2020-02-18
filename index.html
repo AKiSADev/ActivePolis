@@ -803,9 +803,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button id="ADD" type="button" class="btn btn-primary" data-dismiss="modal">Accetta</button>
+                    <button id="ADD" type="button" class="btn btn-success" data-dismiss="modal">Accetta</button>
 
-                    <button id="DEL" type="button" class="btn btn-primary" data-dismiss="modal">Rifiuta</button>
+                    <button id="DEL" type="button" class="btn btn-danger" data-dismiss="modal">Rifiuta</button>
                 </div>
             </div>
         </div>
@@ -823,6 +823,67 @@
                 title="Menu"><svg class="icon icon-white ">
                     <use xlink:href="bootstrap-italia/svg/sprite.svg#it-plus"></use>
                 </svg> </button>
+        </div>
+    </div>
+
+
+    <!-- MODAL AVVISO -->
+    <div id="avviso-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Grazie!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> <bold> Grazie per aver inserito una segnalazione!</bold> <br> Prima di diventare disponibile nella sezione "tutte le segnalazioni", essa verrà approvata</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <!-- MODAL AVVISO -->
+       <div id="ok-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Accettata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> La segnalazione è stata approvata, sarà ora  disponibile nella sezione "Tutte le segnalazioni"</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"  data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <!-- MODAL AVVISO -->
+       <div id="no-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rifiutata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> <bold> La segnalazione è stata rifiutata</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"  data-dismiss="modal">OK</button>
+                </div>
+            </div>
         </div>
     </div>
 

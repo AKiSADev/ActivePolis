@@ -375,6 +375,10 @@ function addSegnalazione() {
     segnalazioni.push(seg);
 
     generateSegnalazione(seg);
+
+    $('#avviso-modal').modal('toggle');
+
+
 }
 
 function assignlatlon(position) {
@@ -477,6 +481,8 @@ $("#ADD").on("click", function (event) {
 
     appendtoSeg(result);
 
+    $('#ok-modal').modal('toggle');
+
 });
 
 $("#DEL").on("click", function (event) {
@@ -490,6 +496,8 @@ $("#DEL").on("click", function (event) {
     result.stato = 3;
 
     removeFromMySeg(id);
+    $('#no-modal').modal('toggle');
+
 
 });
 
