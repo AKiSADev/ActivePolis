@@ -11,12 +11,12 @@ var seg;
 var byPassLogin = false;
 
 var utente = {
-    pimage : "",
-    nome : "",
-    cognome : "",
-    cf : "",
-    email : "",
-    pass : ""
+    pimage: "",
+    nome: "",
+    cognome: "",
+    cf: "",
+    email: "",
+    pass: ""
 }
 
 var segnalazioni;
@@ -51,7 +51,7 @@ function validaLoginMock() {
         document.getElementById("gotoprofilo").hidden = false;
         document.getElementById("yourSeg").hidden = false;
 
-        
+
 
         $('#wrongCred').hide();
 
@@ -75,6 +75,7 @@ function validaLoginMock() {
         $('#accediRegistrati').modal('hide');
         // document.getElementById("gotoprofilo").classList.remove("disabled");
         document.getElementById("gotoprofilo").hidden = false;
+        document.getElementById("yourSeg").hidden = false;
 
         $('#wrongCred').hide();
 
@@ -93,11 +94,16 @@ function validaLoginMock() {
         $('#wrongCred').show();
         document.getElementById("gestisci").hidden = true;
     }
-    
-   
+
+
 }
 
 function logOut() {
+
+    $("#parent-link").addClass("focus--mouse");
+
+    gotoAllSeg();
+
     isAdmin = false;
     isLogged = false;
     $('#gestisci').hide()
@@ -108,7 +114,8 @@ function logOut() {
     $('#entra').show();
     $('#logoutlink').hide();
     $('#loginlink').show();
-    
+
+
     $(".btn-group-fab").hide();
 
     document.getElementById("gestisci").hidden = true;
@@ -224,17 +231,17 @@ function caricaSegnalazioniAll() {
             var epsg4326 = new OpenLayers.Projection("EPSG:4326");
             var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
             for (var i = 0; i < result.length; i++) {
+                if (result[i].stato == 2) {
+                    var lon = result[i].lon;
+                    var lat = result[i].lat;
 
-                var lon = result[i].lon;
-                var lat = result[i].lat;
-
-                var feature = new OpenLayers.Feature.Vector(
-                    new OpenLayers.Geometry.Point(lon, lat).transform(epsg4326, projectTo),
-                    { description: "marker number " + i },
-                    { externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset: -12, graphicYOffset: -25 }
-                );
-                vectorLayer.addFeatures(feature);
-
+                    var feature = new OpenLayers.Feature.Vector(
+                        new OpenLayers.Geometry.Point(lon, lat).transform(epsg4326, projectTo),
+                        { description: "marker number " + i },
+                        { externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset: -12, graphicYOffset: -25 }
+                    );
+                    vectorLayer.addFeatures(feature);
+                }
             }
             map.addLayer(vectorLayer);
         },
@@ -264,7 +271,7 @@ function generateSegnalazione(result) {
     */
     if (result.stato == 2) {
         appendtoSeg(result);
-        if (result.autore == idUtente){
+        if (result.autore == idUtente) {
             appendtoMySeg(result);
         }
     } else if (result.stato == 1) {
@@ -274,59 +281,66 @@ function generateSegnalazione(result) {
     }
 }
 
-function appendtoSeg(result){
+function appendtoSeg(result) {
+
 
     debugger;
     let segnalazioneHTML = $("#segnalazioneFake");
 
     let seg = segnalazioneHTML.clone();
-    seg.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    seg.find(".immagine").attr("src", result.images.length == 0 ? "img/Immagine.png" : result.images[0]);
     seg.find(".titolo").html(result.titolo);
     seg.find(".corpo").html(result.testo.slice(0, 255));
     seg.attr("id", result.id);
     seg.show();
 
-    seg.css({"border" : "1px solid #90EE90" , "border-radius" : "10px"});
+    seg.css({ "border": "3px solid #90EE90", "border-radius": "10px" });
+    seg.find(".icon").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-check-circle");
+    //seg.find(".icon").addClass("icon-success");
 
     $("#seg").append(seg);
 }
 
-function appendToGest(result){
+function appendToGest(result) {
     let segnalazioneHTML = $("#segnalazioneFake");
 
     let seg = segnalazioneHTML.clone();
-    seg.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    seg.find(".immagine").attr("src", result.images.length == 0 ? "img/Immagine.png" : result.images[0]);
     seg.find(".titolo").html(result.titolo);
     seg.find(".corpo").html(result.testo.slice(0, 255));
     seg.attr("id", result.id);
     seg.show();
 
-    seg.css({"border" : "1px solid #FFFF33" , "border-radius" : "10px"});
-    seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-clock");
+    seg.css({ "border": "3px solid #FFFF33", "border-radius": "10px" });
+    seg.find(".icon").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-clock");
+    //seg.find(".icon").addClass("icon-secondary");
     $("#seg3").append(seg);
 }
 
-function appendtoMySeg(result){
+function appendtoMySeg(result) {
     let segnalazioneHTML = $("#segnalazioneFake");
 
     let seg = segnalazioneHTML.clone();
-    seg.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    seg.find(".immagine").attr("src", result.images.length == 0 ? "img/Immagine.png" : result.images[0]);
     seg.find(".titolo").html(result.titolo);
     seg.find(".corpo").html(result.testo.slice(0, 255));
     seg.attr("id", result.id);
     seg.show();
 
-    if (result.stato == 1){
-        seg.css({"border" : "1px solid #FFFF33" , "border-radius" : "10px"});
-        seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-clock");
+    if (result.stato == 1) {
+        seg.css({ "border": "3px solid #FFFF33", "border-radius": "10px" });
+        seg.find(".icon").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-clock");
+        //seg.find(".icon").addClass("icon-secondary");
     }
-    else if (result.stato == 2){
-        seg.css({"border" : "1px solid #90EE90" , "border-radius" : "10px"});
-        seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-check-circle");
+    else if (result.stato == 2) {
+        seg.css({ "border": "3px solid #90EE90", "border-radius": "10px" });
+        seg.find(".icon").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-check-circle");
+        //seg.find(".icon").addClass("icon-success");
     }
-    else{ 
-        seg.css({"border" : "1px solid #DC143C" , "border-radius" : "10px"});
-        seg.find(".iconSVG").attr("xlink:href", "bootstrap-italia/svg/sprite.svg# it-close-circle");
+    else {
+        seg.css({ "border": "3px solid #DC143C", "border-radius": "10px" });
+        seg.find(".icon").attr("xlink:href", "bootstrap-italia/svg/sprite.svg#it-close-circle");
+        //seg.find(".icon").addClass("icon-danger");
     }
 
     $("#seg2").append(seg);
@@ -335,7 +349,7 @@ function appendtoMySeg(result){
 
 function addSegnalazione() {
     let modal = $("#modal-addSegnalazione");
-    
+
     seg = segnalazioni[0];
 
     seg.luogo = modal.find(".luogo");
@@ -352,9 +366,8 @@ function addSegnalazione() {
     seg.autore = idUtente;
     seg.stato = idUtente == 1 ? 1 : 2;
 
-    debugger;
 
-    if (modal.find(".image").length > 0){
+    if (modal.find(".image").length > 0) {
         seg.images.push(modal.find(".image"));
     }
     seg.data = Date.now();
@@ -369,22 +382,22 @@ function assignlatlon(position) {
     seg.lon = posizione.coords.longitude;
 }
 
-function clearSeg(){
+function clearSeg() {
     $("#seg").empty();
     $("#seg2").empty();
     $("#seg3").empty();
 }
 
-function caricaInfoUtente(){
+function caricaInfoUtente() {
 
-    if (idUtente == 1){
+    if (idUtente == 1) {
         utente.pimage = "https://randomuser.me/api/portraits/men/21.jpg"
         utente.nome = "Mario";
         utente.cognome = "Rossi";
         utente.cf = "RSSMAR56G22A662N";
         utente.email = "admin@admin.it";
         utente.pass = "admin";
-    }else{
+    } else {
         utente.pimage = "https://randomuser.me/api/portraits/women/24.jpg"
         utente.nome = "Anastasia";
         utente.cognome = "Mazza";
@@ -393,7 +406,7 @@ function caricaInfoUtente(){
         utente.pass = "user";
     }
 
-    $(".avatar").find("img").attr("src",utente.pimage);
+    $(".avatar").find("img").attr("src", utente.pimage);
     $("#input-group-1").val(utente.nome);
     $("#input-group-2").val(utente.cognome);
     $("#input-group-3").val(utente.cf);
@@ -401,61 +414,63 @@ function caricaInfoUtente(){
     $("#input-group-5").val(utente.pass);
 }
 
-$("#seg").on("click", "li.segnalazione", function(event){
+$("#seg").on("click", "li.segnalazione", function (event) {
     $('#modal-leggi').modal('toggle');
 
-    let id = $( this ).attr('id')
+    let id = $(this).attr('id')
 
-    let result = segnalazioni[id-1];
+    let result = segnalazioni[id - 1];
 
     let modale = $('#modal-leggi');
 
-    modale.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    modale.find(".immagine").attr("src", result.images.length == 0 ? "img/Immagine.png" : result.images[0]);
     modale.find("#title").html(result.titolo);
     modale.find(".descrizione").html(result.testo);
-    
-
-
-
+    modale.find(".gravita").html("normale");
+    modale.find(".luogo").html(getViaByLatLong(result.lat, result.lon));
 });
 
-$("#seg2").on("click", "li.segnalazione", function(event){
+$("#seg2").on("click", "li.segnalazione", function (event) {
     $('#modal-leggi').modal('toggle');
 
-    let id = $( this ).attr('id')
+    let id = $(this).attr('id')
 
-    let result = segnalazioni[id-1];
+    let result = segnalazioni[id - 1];
 
     let modale = $('#modal-leggi');
 
-    modale.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    modale.find(".immagine").attr("src", result.images.length == 0 ? "img/Immagine.png" : result.images[0]);
     modale.find("#title").html(result.titolo);
     modale.find(".descrizione").html(result.testo);
+    modale.find(".gravita").html("normale");
+    modale.find(".luogo").html(getViaByLatLong(result.lat, result.lon));
+
 });
 
-$("#seg3").on("click", "li.segnalazione", function(event){
+$("#seg3").on("click", "li.segnalazione", function (event) {
     $('#modal-gestisci').modal('toggle');
 
-    let id = $( this ).attr('id')
+    let id = $(this).attr('id')
 
-    let result = segnalazioni[id-1];
+    let result = segnalazioni[id - 1];
 
     let modale = $('#modal-gestisci');
 
     modale.attr("val", id);
 
-    modale.find(".immagine").attr("src", result.images.length == 0 ? "https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" : result.images[0]);
+    modale.find(".immagine").attr("src", result.images.length == 0 ? "img/Immagine.png" : result.images[0]);
     modale.find("#title").html(result.titolo);
     modale.find(".descrizione").html(result.testo);
-
+    modale.find(".gravita").html("normale");
+    modale.find(".luogo").html(getViaByLatLong(result.lat, result.lon));
 });
 
-$("#ADD").on("click", function(event){
+$("#ADD").on("click", function (event) {
     $('#modal-gestisci').modal('toggle');
 
     let id = $('#modal-gestisci').attr('val');
 
-    let result = segnalazioni[id-1];
+    let result = segnalazioni[id - 1];
 
     result.stato = 2;
     removeFromMySeg(id);
@@ -464,12 +479,12 @@ $("#ADD").on("click", function(event){
 
 });
 
-$("#DEL").on("click", function(event){
+$("#DEL").on("click", function (event) {
     $('#modal-gestisci').modal('toggle');
 
     let id = $('#modal-gestisci').attr('val');
 
-    let result = segnalazioni[id-1];
+    let result = segnalazioni[id - 1];
 
 
     result.stato = 3;
@@ -478,14 +493,29 @@ $("#DEL").on("click", function(event){
 
 });
 
-function removeFromMySeg(id){
+function removeFromMySeg(id) {
     $('#' + id).remove();
 }
 
-$("#registratibtn").on("click", function(event){
+$("#registratibtn").on("click", function (event) {
 
     byPassLogin = true;
 
     validaLoginMock();
 
 });
+
+function getViaByLatLong(lat, long){
+    let place = "";
+    $.ajax({
+        async: false,
+        url: "http://open.mapquestapi.com/geocoding/v1/reverse?key=ZOwWyHSPqFu1airrcvdG5d05XcfGTln0&location="+ lat + "," + long + "&includeRoadMetadata=true&includeNearestIntersection=true",
+        success: function (result) {
+            console.log(result);
+            debugger;
+            place = result.results[0].locations[0].street;
+        }
+    });
+    debugger;
+    return place;
+}

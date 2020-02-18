@@ -155,8 +155,8 @@
                                     </div>
                                     <div class="menu-wrapper">
                                         <ul class="navbar-nav">
-                                            <li class="nav-item active"><a class="nav-link active" href="#"
-                                                    onclick="gotoAllSeg()"><span>Tutte
+                                            <li class="nav-item active"><a id="parent-link" class="nav-link active"
+                                                    href="#" onclick="gotoAllSeg()"><span>Tutte
                                                         le
                                                         segnalazioni</span><span class="sr-only">current</span></a></li>
                                             <li class="nav-item"><a id="gotoprofilo" class="nav-link" href="#"
@@ -168,11 +168,12 @@
                                             <li class="nav-item" id="gestisci" hidden=true><a class="nav-link" href="#"
                                                     onclick="gotoGestSeg()"><span>Gestisci le
                                                         segnalazioni</span></a></li>
-                                            <li class="nav-item hidable-pc" id="loginlink"><a class="nav-link" href="#"
-                                                    data-toggle="modal" data-target="#accediRegistrati"><span>Log
+                                            <li class="nav-item hidable-pc-1" id="loginlink"><a class="nav-link"
+                                                    href="#" data-toggle="modal"
+                                                    data-target="#accediRegistrati"><span>Log
                                                         in</span></a></li>
-                                            <li class="nav-item hidable-pc" id="logoutlink"><a class="nav-link" href="#"
-                                                    data-toggle="modal" data-target="#logout-modal" ><span>Log
+                                            <li class="nav-item hidable-pc-2" id="logoutlink"><a class="nav-link"
+                                                    href="#" data-toggle="modal" data-target="#logout-modal"><span>Log
                                                         out</span></a></li>
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
@@ -211,12 +212,11 @@
         </div>
     </div>
 
-
-
     <!--DIV DI "TUTTE LE SEGNALAZIONI" -->
     <div id="allSeg" class="row" style="display: block;">
 
-        <div class="col-md-6 responsive-map">
+        <br>
+        <div class="shadow bor-left col-md-6 responsive-map">
             <div id="map">
                 <!-- DIV MAPPA CARICATA A RUN TIME-->
             </div>
@@ -239,7 +239,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="Luogo da cercare">
+                                        <input type="text" class="form-control" id="inputAddress"
+                                            placeholder="Luogo da cercare">
                                         <label for="inputAddress">Luogo</label>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -255,7 +256,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle" placeholder="Testo da cercare">
+                                        <input type="text" class="form-control" id="inputTitle"
+                                            placeholder="Testo da cercare">
                                         <label for="inputTitle">Testo</label>
                                     </div>
 
@@ -407,7 +409,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Luogo da cercare">
+                                        <input type="text" class="form-control" id="inputAddress2"
+                                            placeholder="Luogo da cercare">
                                         <label for="inputAddress2">Luogo</label>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -423,7 +426,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle2" placeholder="Testo da cercare">
+                                        <input type="text" class="form-control" id="inputTitle2"
+                                            placeholder="Testo da cercare">
                                         <label for="inputTitle2">Testo</label>
                                     </div>
 
@@ -473,7 +477,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputAddress3" placeholder="Luogo da cercare">
+                                        <input type="text" class="form-control" id="inputAddress3"
+                                            placeholder="Luogo da cercare">
                                         <label for="inputAddress3">Luogo</label>
                                         <div class="input-group-append">
                                             <div class="input-group-text">
@@ -489,7 +494,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="inputTitle3" placeholder="Testo da cercare">
+                                        <input type="text" class="form-control" id="inputTitle3"
+                                            placeholder="Testo da cercare">
                                         <label for="inputTitle3">Testo</label>
                                     </div>
 
@@ -565,11 +571,13 @@
                         <div class="tab-pane fade tab-accesso show active" id="accedi" role="tabpanel">
                             <form>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="emailLogIn" placeholder="Email con cui ti sei registrato" required>
+                                    <input type="email" class="form-control" id="emailLogIn"
+                                        placeholder="Email con cui ti sei registrato" required>
                                     <label for="emailLogIn">Email</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="passLogIn" placeholder="La tua password" required>
+                                    <input type="password" class="form-control" id="passLogIn"
+                                        placeholder="La tua password" required>
                                     <label for="passLogIn">Password</label>
                                 </div>
                                 <button class="btn btn-primary" type="button" id="logmein"
@@ -584,28 +592,34 @@
                             <form action="">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nome" placeholder="Inserisci il tuo nome" required>
+                                    <input type="text" class="form-control" id="nome"
+                                        placeholder="Inserisci il tuo nome" required>
                                     <label for="nome">Nome</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="cognome"  placeholder="Inserisci il tuo cognome" required>
+                                    <input type="text" class="form-control" id="cognome"
+                                        placeholder="Inserisci il tuo cognome" required>
                                     <label for="cognome">Cognome</label>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="codFisc" placeholder="Il tuo codice fiscale" required>
+                                    <input type="text" class="form-control" id="codFisc"
+                                        placeholder="Il tuo codice fiscale" required>
                                     <label for="codFisc">Codice fiscale</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="emailReg" placeholder="Inserisci la tua email" required>
+                                    <input type="email" class="form-control" id="emailReg"
+                                        placeholder="Inserisci la tua email" required>
                                     <label for="emailReg">Email</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="passReg" placeholder="Crea una password" required>
+                                    <input type="password" class="form-control" id="passReg"
+                                        placeholder="Crea una password" required>
                                     <label for="passReg">Password</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="passRegConf" placeholder="Conferma la password" required>
+                                    <input type="password" class="form-control" id="passRegConf"
+                                        placeholder="Conferma la password" required>
                                     <label for="passRegConf">Conferma password</label>
                                 </div>
 
@@ -671,8 +685,9 @@
                             Localizzami
                         </button>
                     </div>
-                    <div class="form-group" >
-                        <textarea id="descrizione" rows="6" placeholder="Inserisci qui la descrizione di ciò che è successo"></textarea>
+                    <div class="form-group">
+                        <textarea id="descrizione" rows="6"
+                            placeholder="Inserisci qui la descrizione di ciò che è successo"></textarea>
                         <label for="descrizione">Descrivi cosa è successo</label>
                     </div>
                     <div class="custom-file" id="customFile" lang="es">
@@ -707,18 +722,29 @@
 
                         <div class="img-responsive-wrapper">
                             <div class="img-responsive img-responsive-panoramic">
-                                <figure class="img-wrapper">
+                                <div class="text-center img-wrapper">
                                     <img class="immagine"
                                         src="https://via.placeholder.com/310x94/0066cc/FFFFFF/?text=IMMAGINE%20DI%20ESEMPIO"
                                         title="img title" alt="imagealt">
-                                </figure>
+                                </div>
                             </div>
                         </div>
 
                         <!--end card-->
                     </div>
-
+                    <br>
                     <div>
+                        <h6>Gravità</h6>
+                        <p class="gravita"> </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h6>Luogo</h6>
+                        <p class="luogo"> </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h6>Descrizione</h6>
                         <p class="descrizione"> </p>
                     </div>
                 </div>
@@ -759,9 +785,21 @@
 
                         <!--end card-->
                     </div>
-                    <p class="descrizione">
-
-                    </p>
+                    <br>
+                    <div>
+                        <h6>Gravità</h6>
+                        <p class="gravita"> </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h6>Luogo</h6>
+                        <p class="luogo"> </p>
+                    </div>
+                    <br>
+                    <div>
+                        <h6>Descrizione</h6>
+                        <p class="descrizione"> </p>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
@@ -790,18 +828,20 @@
 
 
     <ul id="seg4" style="display: none;">
-        <li id="segnalazioneFake" class="media segnalazione" style="display: none;">
-            <img class="immagine align-self-center mr-3"
-                src="https://via.placeholder.com/64x64/ebebeb/808080/?text=Immagine" alt="testo alternativo">
-            <div class="media-body">
+        <li id="segnalazioneFake" class="shadow media segnalazione" style="display: none;">
+            <img class="shadow immagine align-self-center mr-3" src="img/Immagine.png" alt="testo alternativo">
+            <div class="media-seg media-body">
+                <br>
                 <h5 class="titolo mt-0 mb-1">Elenco basato sull'oggetto media</h5>
+                <hr>
                 <div class="corpo">
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
                     sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
                     condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                 </div>
+                <hr>
                 <svg class="icon d-lg-block icon-position">
-                    <use class="iconSVG" xlink:href="bootstrap-italia/svg/sprite.svg#it-check-circle"></use>
+                    <use class="icon bg-white" xlink:href="bootstrap-italia/svg/sprite.svg#it-check-circle"></use>
                 </svg>
             </div>
 

@@ -1,8 +1,8 @@
 # ACTIVE POLIS
 
-QUESTA APPLICAZIONE è PER LA GESTIONE DELLE SEGNALAZIONI IN UN UN'AREA PIù O MENO ESTESA.
+Questa applicazione ha come obiettivo primario mettere in contatto i cittadini con le istituzioni e creare una sorta di archivio di segnalazioni per il miglioramento della vita urbana.
 
-SI è PRESO COME ESEMPIO IL COMUNE DI BARI.
+Si è preso come esempio il comune di Bari.
 
 ## INSTALLAZIONE E TEST
 

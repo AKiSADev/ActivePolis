@@ -67,7 +67,8 @@
 }
 
 body {
-    padding-top: 13rem;
+    background-color: whitesmoke;
+    padding-top: 12rem;
     height: 100%;
     width: 100%;
 }
@@ -148,7 +149,11 @@ label{
     width: 100%;
 }
 
-.hidable-pc{
+.hidable-pc-1{
+    display: none;
+}
+
+.hidable-pc-2{
     display: none;
 }
 
@@ -159,11 +164,21 @@ label{
 }
 
 .immagine{
-    padding-right: 5px;
+    margin-left: 1em;
+    border : 1px solid #000000;
 }
 
 .descrizione{
     padding-top: 2em;
+}
+
+.media-seg{
+    padding-right: 1em;
+}
+
+.bor-left{
+    margin-left: 1em;
+    border : 1px solid gray; 
 }
 
 @media screen and (max-width: 600px) {
@@ -187,11 +202,18 @@ label{
     .note-positioner {
         padding-top: 0em;
     }
+   
     .hidable-phone{
         display: none;
     }
 
-    .hidable-pc{
+    .hidable-pc-1{
         display: block;
     }
+
+
+    .hidable-pc-2{
+        display: block;
+    }
+
 }
